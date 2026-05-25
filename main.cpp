@@ -5,7 +5,6 @@
 int main() {
     FilaPrioridade fila;
 
-    // Pacientes de teste conforme especificado no trabalho
     std::vector<Paciente> pacientes = {
         Paciente("Carlos",  2, 45, false),
         Paciente("Maria",   5,  5, false),
@@ -15,9 +14,7 @@ int main() {
         Paciente("Helena",  2, 45, true)
     };
 
-    // ─────────────────────────────────────────
-    // Fase 1: Inserções
-    // ─────────────────────────────────────────
+   
     std::cout << "========================================\n";
     std::cout << "   SISTEMA DE TRIAGEM - SAO BINARIO\n";
     std::cout << "========================================\n\n";
@@ -33,9 +30,7 @@ int main() {
         std::cout << "\n";
     }
 
-    // ─────────────────────────────────────────
-    // Fase 2: Atendimento em ordem de prioridade
-    // ─────────────────────────────────────────
+   
     std::cout << "========================================\n";
     std::cout << ">>> ORDEM DE ATENDIMENTO <<<\n";
     std::cout << "========================================\n\n";
