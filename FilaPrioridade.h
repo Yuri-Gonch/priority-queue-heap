@@ -8,37 +8,30 @@
 #include <iomanip>
 
 /**
- * @brief Fila de Prioridade implementada com Heap Binário (Max-Heap).
- *
- * O paciente com maior prioridade clínica fica sempre na raiz (índice 0).
- * Operações principais: enfileirar (Sobe Heap) e desenfileirar (Desce Heap).
+ * @brief 
  */
 class FilaPrioridade {
 private:
-    std::vector<Paciente> heap; ///< Vetor interno que representa o heap
+    std::vector<Paciente> heap; 
 
     /**
-     * @brief Retorna o índice do pai de um nó.
+     * @brief
      */
     int pai(int i) const { return (i - 1) / 2; }
 
     /**
-     * @brief Retorna o índice do filho esquerdo de um nó.
+     * @brief
      */
     int filhoEsq(int i) const { return 2 * i + 1; }
 
     /**
-     * @brief Retorna o índice do filho direito de um nó.
+     * @brief
      */
     int filhoDir(int i) const { return 2 * i + 2; }
 
     /**
-     * @brief Algoritmo "Sobe Heap" (heapify up).
-     *
-     * Após inserir um elemento no final, sobe até a posição correta
-     * comparando com o pai e trocando se necessário.
-     *
-     * @param i Índice do elemento recém-inserido.
+     * @brief 
+     * @param i
      */
     void sobeHeap(int i) {
         while (i > 0 && heap[i].temMaiorPrioridade(heap[pai(i)])) {
@@ -48,12 +41,8 @@ private:
     }
 
     /**
-     * @brief Algoritmo "Desce Heap" (heapify down).
-     *
-     * Após remover a raiz, coloca o último elemento na raiz e desce
-     * até a posição correta, trocando com o filho de maior prioridade.
-     *
-     * @param i Índice do elemento a descer (normalmente 0).
+     * @brief 
+     * @param 
      */
     void desceHeap(int i) {
         int tamanho = heap.size();
@@ -76,12 +65,8 @@ private:
 
 public:
     /**
-     * @brief Insere um paciente na fila de prioridade.
-     *
-     * O paciente é adicionado ao final do heap e depois sobe
-     * até sua posição correta (Sobe Heap).
-     *
-     * @param p Paciente a ser inserido.
+     * @brief 
+     * @param 
      */
     void enfileirar(const Paciente& p) {
         heap.push_back(p);
@@ -89,13 +74,9 @@ public:
     }
 
     /**
-     * @brief Remove e retorna o paciente de maior prioridade.
-     *
-     * A raiz (maior prioridade) é removida, o último elemento
-     * vai para a raiz e desce até sua posição correta (Desce Heap).
-     *
-     * @return Paciente com maior prioridade.
-     * @throws std::runtime_error Se a fila estiver vazia.
+     * @brief 
+     * @return 
+     * @throws 
      */
     Paciente desenfileirar() {
         if (estaVazia())
@@ -112,7 +93,7 @@ public:
     }
 
     /**
-     * @brief Retorna o paciente de maior prioridade sem removê-lo.
+     * @brief 
      */
     const Paciente& topo() const {
         if (estaVazia())
@@ -121,19 +102,17 @@ public:
     }
 
     /**
-     * @brief Verifica se a fila está vazia.
+     * @brief 
      */
     bool estaVazia() const { return heap.empty(); }
 
     /**
-     * @brief Retorna o número de pacientes na fila.
+     * @brief 
      */
     int tamanho() const { return heap.size(); }
 
     /**
-     * @brief Imprime o estado interno do heap (vetor).
-     *
-     * Exibe cada paciente com seus dados para fins de depuração.
+     * @brief 
      */
     void imprimirHeap() const {
         std::cout << "  Estado do heap (" << heap.size() << " paciente(s)):\n";
